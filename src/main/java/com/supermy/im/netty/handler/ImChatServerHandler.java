@@ -434,7 +434,6 @@ public class ImChatServerHandler extends SimpleChannelInboundHandler<String> { /
             } else {
                 //3.2保存预约单对应的司机到 redis , 过滤,不允许范围外的司机抢单;
                 redisClient.opsForHash().put(Cmd.ORDER_ALLOW_MAP + orderId, doc.get("_id"), doc.get("_id"));
-
                 driverChannel.writeAndFlush(String.format(env.getProperty("im.msg"), Cmd.RECEIVE_APPOINTMENT, "订单信息,可以抢单...",
                         new Date().getTime(), "success", driverMsg) + "\n");
 

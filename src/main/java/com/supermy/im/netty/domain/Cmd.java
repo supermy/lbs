@@ -10,11 +10,11 @@ public class Cmd {
     public static String ORDER_CONSUMED_LIST = "orderConsumedList"; //订单消费列表
     public static String ORDER_CONSUMED_MAP = "orderConsumedMap"; //已有订单的司机列表
     public static String ORDER_ALLOW_MAP = "orderAllowMap"; //允许抢单的司机列表
-    public static String ORDER_CAR_PASSENGER = "orderPassengers"; //允许抢单的司机列表
+    public static String ORDER_CAR_PASSENGER = "orderPassengers"; //允许抢单的司机列表   乘客
 
 
 //	-- 函数：尝试获得订单，如果成功，则返回json字符串，如果不成功，则返回空
-//	-- 参数：订单队列名，已消费的队列名，去重的Map名,司机ID，允许抢单的司机ID
+//	-- 参数：1.订单队列名{KEYS[1],List}，2.已消费的队列名{KEYS[2],List}，3.去重的Map名{KEYS[3],Hash},4.司机ID{KEYS[4]}，5.允许抢单的司机ID {Hash KEYS[5] }
 //	-- 返回值：nil 或者 json字符串，包含司机ID：driverId，订单ID：id，订单信息：money
    public static String tryGetOrderScript =
 
